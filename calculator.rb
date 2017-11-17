@@ -12,7 +12,7 @@ class Calculator
 	end
  
  def add(number)
- 	@result += number.to_i
+ 	@result += number
  	@history << "add #{number} (result: #{result})"
  end
  
@@ -23,18 +23,22 @@ class Calculator
  
  def substract(number)
  	
- 	@result -= number.to_i
+ 	@result -= number
 	@history << "substract #{number} (result: #{result})" 
  end
  
  def multiply(number)
- 	@result *= number.to_i
+ 	@result *= number
  	@history << "multiply #{number} (result: #{result})"
  end
  
  def divide(number)
- 	@result /= number.to_i
- 	@history << "divide #{number} (result: #{result})"
+ 	if number !=0 
+ 		@result /= number
+ 		@history << "divide #{number} (result: #{result})"
+ 	else
+ 		puts "Divide by zero !!"
+ 	end
  end
  
  def change_sign
